@@ -865,7 +865,7 @@ func (a *anyMultiDimSliceArray) SetDimensions(dimensions []ArrayDimension) error
 			sliceDimensionCount++
 		}
 
-		if sliceDimensionCount != len(dimensions) {
+		if sliceDimensionCount != 1 && sliceDimensionCount != len(dimensions) {
 			return fmt.Errorf("PostgreSQL array has %d dimensions but slice has %d dimensions", len(dimensions), sliceDimensionCount)
 		}
 

@@ -983,7 +983,7 @@ func TryWrapPtrSliceScanPlan(target any) (plan WrappedScanPlanNextSetter, nextVa
 
 	if targetElemType.Kind() == reflect.Slice {
 		slice := reflect.New(targetElemType).Elem()
-		return &wrapPtrSliceReflectScanPlan{}, &anySliceArrayReflect{slice: slice}, true
+		return &wrapPtrMultiDimSliceScanPlan{}, &anySliceArrayReflect{slice: slice}, true
 	}
 	return nil, nil, false
 }
